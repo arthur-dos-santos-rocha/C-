@@ -21,6 +21,9 @@ int main()
    }else if (opcao == 3){
        resultado = a * b;
    }else if(opcao == 4){
+   if(&b != 0){
+    printf("Não é possivel ser dividido por zero\n");
+    }
        resultado = a/ b;
    }else{
        printf("Não é possivel continuar");
