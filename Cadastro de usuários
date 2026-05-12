@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main()
+{
+   //criar calculador
+   int idade;
+   char nome[50];
+   char cidade[50];
+   
+   printf("Digite sua idade: ");
+   scanf("%d",&idade);
+   printf("Digite seu nome: ");
+   scanf("%s",&nome);
+   printf("Digite o nome da sua cidade: ");
+   scanf("%s",&cidade);
+   
+   printf("\nOlá! Meu nome é %s, tenho %d, estou morrando em %s",nome,idade,cidade);
+  
+   
+   
+   
+    return 0;
+}
