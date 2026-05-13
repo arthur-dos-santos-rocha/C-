@@ -1,0 +1,33 @@
+#include <stdio.h>
+int main()
+{
+   //criar calculador
+  char opcao;
+  int num1;
+  
+  
+  
+  while (opcao != 3){
+    printf("\n =========MENU=======");
+    printf("\n1. Dobrar o valor");
+    printf("\n2. O valor quadrado");
+    printf("\n3. sair");
+    printf("\nopcao: ");
+    scanf("%d",&opcao);
+
+  if(opcao == 1){
+  printf("Digite um valor: ");
+  scanf("%d",&num1);
+  printf("O valor dobrado é %d",num1*2);
+  }
+  if(opcao == 2){
+  printf("Digite um valor: ");
+  scanf("%d",&num1);
+  printf("O valor dobrado é %d",num1*num1);
+  }
+  else{
+  printf("Sanido do Menu");
+  }
+  }
+    return 0;
+}
