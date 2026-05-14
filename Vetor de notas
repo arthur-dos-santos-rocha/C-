@@ -1,27 +1,46 @@
+
 #include <stdio.h>
-int main()
-{
-   //criar calculador
-  float notas[5];
-  float soma = 0, media;
-  float maior;
-  
-  
-  for(int notas1 = 0; notas1<5;notas1++){
-      scanf("%f",&notas[notas1]);
-      soma += notas[notas1];
-      
-  }
-    media = soma /5;
-    
-    if(media >6){
-        printf("Aprovado");
-    }else{
-        printf("Reprovado");
+
+int main() {
+
+    float notas[5];
+    float soma = 0, media;
+    float maior;
+
+    for(int no = 0; no < 5; no++) {
+
+        printf("Digite sua nota: \n");
+        scanf("%f", &notas[no]);
+
+        soma += notas[no];
     }
-    
-    printf("Todas as notas: %f",notas1);
-    printf("A media foi %f",media);
-    printf("A maior nota foi ");
+
+    media = soma / 5;
+
+    maior = notas[0];
+
+    for(int n = 1; n < 5; n++) {
+
+        if(notas[n] > maior) {
+            maior = notas[n];
+        }
+    }
+
+    if(media >= 6) {
+        printf("O aluno foi Aprovado\n");
+    } else {
+        printf("O aluno foi Reprovado\n");
+    }
+
+    printf("\n");
+    printf("A media foi %.2f\n", media);
+    printf("A maior nota foi %.2f\n", maior);
+
+    printf("Todas as notas:\n");
+
+    for(int i = 0; i < 5; i++) {
+        printf("%.2f\n", notas[i]);
+    }
+
     return 0;
 }
