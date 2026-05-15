@@ -1,0 +1,45 @@
+
+#include <stdio.h>
+#define Alunos 3
+#define Disci 3
+
+int main() {
+    const int ma = 3
+    float notas[ma][ma];
+    float soma; 
+    float media;
+    
+        //leituras de notas
+    for(int i = 0; i < ma; i++) { //aluno
+        printf("Digite sua nota: %f");
+        for(int n = 0; n< ma;n++ ){ //notas
+             scanf("%f", &notas[i][n]);
+        }
+    }
+    //matriz 
+    for(int i = 0; i < ma; i++) { 
+        for(int n = 0; n< ma;n++ ){ 
+             scanf("%f", &notas[i][n]);
+        }
+        printf("\n");
+        
+    }//media dos alunos
+    for(int i = 0; i < ma; i++) { //aluno
+      media=0
+        for(int n = 0; n< ma;n++ ){ //notas
+            
+            soma = soma +notas[i][n];
+        }
+        
+         media = soma / ma;
+        printf("A media é %d: %f", i+1,media);
+        ir(media>= 6){
+            printf("aluno aprovado\n");
+        }else{
+            printf("Aluno reprovado\n");
+        }
+        }
+        
+    
+    return 0;
+}
