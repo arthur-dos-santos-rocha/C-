@@ -1,0 +1,57 @@
+
+#include <stdio.h>
+
+int main()
+{
+    //Crie um programa que leia três números inteiros e exiba qual é o maior, o do meio e o menor.
+    
+    int num1;
+    int num2;
+    int num3;
+    
+    
+    printf("\nDigite o 1 numero: ");
+    scanf("%d",&num1);
+    printf("\nDigite o 2 numero: ");
+    scanf("%d",&num2);
+    printf("\nDigite o 3 numero: ");
+    scanf("%d",&num3);
+    
+    //processamento
+    
+    
+    if(num1 > num2 && num1 > num3){
+        printf("\nO numero %d é o maior numero \n ",num1);
+    }
+        else if(num2 > num3){
+        printf("O numero %d é o maior numero \n",num2);
+        
+        }
+        else {
+         printf("O numero %d é o maior numero\n",num3);
+
+        }
+        
+    if(num1 < num2 && num1 < num3){
+        printf("O numero %d é o menor numero \n",num1);
+    }
+        else if(num2 < num3){
+        printf("O numero %d é o menor numero \n",num2);
+        
+        }
+        else {
+        printf("O numero %d é o menor numero \n",num3);
+
+        }
+    if(num1 > num2 && num1 < num3){
+        printf("\n O numero %d é o intermediário\n",num1);
+    }else if(num2 > num1 && num2 < num3){
+        printf("O numero %d é o intermediário \n",num2);
+    }else {
+        printf("O numero %d é o intermediário\n",num3);
+
+    }
+    
+
+    return 0;
+}
