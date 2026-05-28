@@ -1,0 +1,52 @@
+
+#include <stdio.h>
+
+int main()
+{
+    //Definir o tipo com typedef
+typedef struct{
+    char nome[50];  
+    int mesa;
+    float valortotal;
+    int pedido;
+} Cliente;
+
+//Criar variaveis desse tipo 
+
+Cliente c1;
+Cliente c2;
+Cliente c3;
+Cliente fila[100];
+int option;
+int NumeroCliente = 0;
+
+
+while(option != 3){
+    printf("\n====Menu====\n");
+    printf("\n1.Cadastrar o pedido");
+    printf("\n2.Cardapio");
+    printf("\n3.Sair do menu");
+    
+    printf("\nQual opção deseja prosseguir?");
+    scanf("%d\n",&option);
+    if(option == 1){
+        printf("Digite o que deseja comer ");
+        scanf("%d",&fila[NumeroCliente].pedido);
+        printf("Digite a mesa que deseja sentar ");
+        scanf("%d",&fila[NumeroCliente].mesa);
+
+        
+        
+    NumeroCliente++;
+        
+    }
+}
+
+
+    printf("==========Tabela De Final=========\n");
+    
+    printf("\nO numero da mesa é %d ",c1.mesa);
+    printf("\nO total do pedido foi %.2f ",c1.valortotal);
+
+    return 0;
+}
