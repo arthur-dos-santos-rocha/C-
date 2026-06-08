@@ -80,7 +80,6 @@ int main(){
 
             push(&historico, valor);
 
-            /* limpa o redo */
             inicializar(&lixeira);
 
         }
