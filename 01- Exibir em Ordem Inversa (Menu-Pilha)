@@ -1,0 +1,91 @@
+#include <stdio.h>
+#define MAX 3
+
+    typedef struct{
+        int DadosDoUsuario[MAX];
+        int topo;
+    }
+    Pilha;
+    
+    void inicializar (Pilha *p) {
+            p->topo = -1;
+    }
+    int estaVazia(Pilha *p){
+        return p->topo == -1;
+    }
+    int estaCheia(Pilha *p){
+        return p->topo == MAX -1;
+    }
+    
+    void push(Pilha *p, int valor) {
+        if (estaCheia(p)) return;
+        p->DadosDoUsuario[++p->topo] = valor;
+        
+    }
+    
+    int pop (Pilha *p){
+        if (estaVazia(p)) return -1;
+        return p->DadosDoUsuario[p->topo --]; //Desse jeito vai mostrar o segundo push no caso "15" mais se colocar 
+        //[p->topo --] vai mostrar o ultimo push / [--p->topo] esse vai mostrar o segundo
+    }
+    
+    int peek(Pilha *p){
+        if (estaVazia(p)) return -1;
+        return p-> DadosDoUsuario[p->topo];
+    }
+    
+int main()
+{
+/*Use a pilha para ler N números digitados pelo usuário e exibi-los na ordem inversa da digitação, explorando o comportamento LIFO.
+
+Leia N do usuário (respeite o limite MAX da pilha)
+Use for para ler e chamar push() em cada número
+Use while(!estaVazia(&p)) para desempilhar e exibir
+Exiba a sequência original e depois a invertida
+Extra: calcule a soma e a média durante o desempilhamento */
+Pilha p;
+Pilha original;
+
+int option =0;
+int valor;
+inicializar(&p);
+inicializar(&original);
+
+
+
+while(option != 4){
+    printf("\n====Menu de Pilha====\n");
+    printf("\n1 - Inserir");
+    printf("\n2 - Mostrar");
+    printf("\n3 - Mostrar invertida");
+    printf("\n4 - Sair");
+    printf("\nOpcao: ");
+    scanf("%d", &option);
+    
+if(option == 1){
+
+    for(int i=0; i<MAX; i++){
+    printf("Digite um numero: \n");
+    scanf("%d",&valor);
+    push(&original,valor);
+}
+    printf("\nTopo da pilha: %d\n",peek(&original));
+}
+
+else if(option == 2){
+    for(int i = 0; i <= original.topo; i++){
+    printf("%d",original.DadosDoUsuario[i]);
+
+}
+}
+else if(option == 3){
+    printf("Pilha invertida\n");
+    
+    while(!estaVazia(&original)){
+    printf("%d",pop(&original));
+    }
+}
+}
+return 0;
+}
+
