@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX 100
+
+typedef struct {
+    char DadosDoUsuario[MAX];
+    int topo;
+} Pilha;
+
+void inicializar(Pilha *p) {
+    p->topo = -1;
+}
+
+int estaVazia(Pilha *p) {
+    return p->topo == -1;
+}
+
+int estaCheia(Pilha *p) {
+    return p->topo == MAX - 1;
+}
+
+void push(Pilha *p, char valor) {
+    if (!estaCheia(p))
+        p->DadosDoUsuario[++p->topo] = valor;
+}
+
+char pop(Pilha *p) {
+    if (estaVazia(p))
+        return '\0';
+
+    return p->DadosDoUsuario[p->topo--];
+}
+/*Use a pilha para ler N números digitados pelo usuário e exibi-los na ordem inversa da digitação, explorando o comportamento LIFO.
+
+Leia N do usuário (respeite o limite MAX da pilha)
+Use for para ler e chamar push() em cada número
+Use while(!estaVazia(&p)) para desempilhar e exibir
+Exiba a sequência original e depois a invertida
+Extra: calcule a soma e a média durante o desempilhamento */
+
+int main() {
+
+Pilha p;
+inicializar(&p);
+
+char palavra[MAX];
+
+printf("Digite uma palavra: ");
+scanf("%s", palavra);
+
+int tamanho = strlen(palavra);
+
+for (int i = 0; i < tamanho; i++) {
+    push(&p, palavra[i]);
+    }
+
+for (int i = 0; i < tamanho; i++) {
+    if (pop(&p) != palavra[i]) {
+        printf("Nao e palindromo\n");
+        return 0;
+        }
+    }
+
+    printf("E palindromo\n");
+
+    return 0;
+}
