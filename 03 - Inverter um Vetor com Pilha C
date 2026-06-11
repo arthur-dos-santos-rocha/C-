@@ -1,0 +1,56 @@
+#include <stdio.h>
+#define MAX 6
+
+typedef struct {
+    int DadosDoUsuario[MAX];
+    int topo;
+} Pilha;
+
+void inicializar(Pilha *p) {
+    p->topo = -1;
+}
+
+int estaVazia(Pilha *p) {
+    return p->topo == -1;
+}
+
+int estaCheia(Pilha *p) {
+    return p->topo == MAX - 1;
+}
+
+void push(Pilha *p, int v) {
+    if (estaCheia(p)) return;
+    p->DadosDoUsuario[++p->topo] = v;
+}
+
+int pop(Pilha *p) {
+    if (estaVazia(p)) return -1;
+    return p->DadosDoUsuario[p->topo--];
+}
+
+int main() {
+    Pilha p;
+    inicializar(&p);
+
+    int v[] = {10, 20, 30, 40, 50, 60};
+
+    printf("Vetor original:\n");
+    for (int i = 0; i < 6; i++) {
+        printf("%d ", v[i]);
+    }
+
+    for (int i = 0; i < 6; i++) {
+        push(&p, v[i]);
+    }
+
+    for (int i = 0; i < 6; i++) {
+        v[i] = pop(&p);
+    }
+
+    printf("\n\nVetor invertido:\n");
+    for (int i = 0; i < 6; i++) {
+        printf("%d ", v[i]);
+    }
+
+    return 0;
+}
